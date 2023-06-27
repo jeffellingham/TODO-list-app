@@ -10,6 +10,7 @@ function newItem(){
         alert('Type something, silly!');
     } else {
         $('#list').append(li);
+        $('#input').val('');
     }
 
     // Crossing out an item
@@ -35,9 +36,13 @@ function newItem(){
     $('#list').sortable();
 
     // Pressing enter will add text
-    // $('#input').on('keydown', (e) => {
-    //     if(e.key === 'Enter' && inputValue != '') {
-    //         newItem();
-    //     }
-    // });
+    $('#input').on('keydown', (e) => {
+        if(e.key === 'Enter') {
+            e.preventDefault(); //prevent form submission
+            let inputValue = $('#input').val();
+        if (inputValue != '') {
+            newItem(); //call the function to add the item
+            $('#input').val(''); //clear the input field
+        }
+    }});
 }
