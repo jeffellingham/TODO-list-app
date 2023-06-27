@@ -35,9 +35,9 @@ function newItem(){
     $('#list').sortable();
 
     // Pressing enter will add text
-    // $('#button').on('keydown', (e) => {
-    //     if(e.which === 13 && inputValue != '') {
-    //         $('#list').append(li);
+    // $('#input').on('keydown', (e) => {
+    //     if(e.key === 'Enter' && inputValue != '') {
+    //         newItem();
     //     }
     // });
 }
